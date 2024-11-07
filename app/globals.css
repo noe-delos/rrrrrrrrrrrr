@@ -19,3 +19,32 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.email-content {
+  @apply text-gray-900;
+}
+
+.email-content img {
+  @apply max-w-full h-auto;
+}
+
+.email-content a {
+  @apply text-blue-600 hover:text-blue-800 underline;
+}
+
+.email-content blockquote {
+  @apply border-l-4 border-gray-200 pl-4 my-4 text-gray-700;
+}
+
+.email-content table {
+  @apply border-collapse w-full my-4;
+}
+
+.email-content th,
+.email-content td {
+  @apply border border-gray-200 p-2;
+}
+
+.email-content pre {
+  @apply bg-gray-50 p-4 rounded-lg overflow-x-auto my-4;
+}

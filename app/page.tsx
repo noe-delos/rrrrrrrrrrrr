@@ -3,7 +3,7 @@
 
 import EmailList from '@/components/EmailList';
 import GoogleLogin from '@/components/GoogleLogin';
-import { Inbox, LogOut, Mail } from 'lucide-react';
+import { Inbox, LogOut } from 'lucide-react';
 import { Suspense, useEffect, useState } from 'react';
 
 export default function Home() {
@@ -25,9 +25,9 @@ export default function Home() {
         {/* Header Section */}
         <div className="text-center mb-12">
           <div className="flex items-center justify-center gap-3 mb-4">
-            <Mail className="h-10 w-10 text-blue-500" />
+            <img src='https://www.cosmos-suite.ai/assets/images/logo.png' alt='' className='size-20' />
             <h1 className="text-4xl font-bold text-gray-900 tracking-tight">
-              Gmail Viewer
+              Cosmos Mails
             </h1>
           </div>
           <p className="text-gray-600 text-lg max-w-2xl mx-auto">
