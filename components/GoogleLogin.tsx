@@ -1,10 +1,15 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+// components/GoogleLogin.tsx
 'use client';
 
 import { useGoogleLogin } from '@react-oauth/google';
 import { useState } from 'react';
 
-export default function GoogleLogin() {
+interface GoogleLoginProps {
+  onSuccess?: () => void;
+}
+
+export default function GoogleLogin({ onSuccess }: GoogleLoginProps) {
   const [isLoading, setIsLoading] = useState(false);
   const [debug, setDebug] = useState<{
     tokenInfo?: any;
@@ -45,6 +50,8 @@ export default function GoogleLogin() {
           token_preview: tokenResponse.access_token.slice(0, 10) + '...',
           token_length: tokenResponse.access_token.length,
         });
+        
+        onSuccess?.();
         
       } catch (error) {
         console.error('Authentication Error:', error);
@@ -92,7 +99,7 @@ export default function GoogleLogin() {
               <pre className="bg-white p-2 rounded border border-gray-200 overflow-x-auto text-gray-800">
                 {JSON.stringify({
                   ...debug.tokenInfo,
-                  access_token: debug.tokenInfo.access_token,
+                  access_token: debug.tokenInfo.access_token.slice(0, 10) + '...',
                 }, null, 2)}
               </pre>
             </div>
