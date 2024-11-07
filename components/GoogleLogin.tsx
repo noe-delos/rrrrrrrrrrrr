@@ -117,7 +117,7 @@ export default function GoogleLogin() {
             <div>
               <div className="text-gray-900 font-medium">Stored Token Preview:</div>
               <pre className="bg-white p-2 rounded border border-gray-200 overflow-x-auto text-gray-800">
-                {localStorage.getItem('gmail_token')}
+                {localStorage.getItem('gmail_token')?.slice(0, 10) + '...'}
               </pre>
             </div>
           )}
